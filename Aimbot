@@ -1,1 +1,453 @@
+-- ========================================
+-- V2 DISCONTINUED UPDATES NOTICE
+-- ========================================
 
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "V2UpdatesDiscontinuedNotice"
+screenGui.ResetOnSpawn = false
+screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+-- Main Frame
+local mainFrame = Instance.new("Frame")
+mainFrame.Name = "MainFrame"
+mainFrame.Size = UDim2.new(0, 400, 0, 280)
+mainFrame.Position = UDim2.new(0.5, -200, 0.5, -140)
+mainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+mainFrame.BorderSizePixel = 0
+mainFrame.Parent = screenGui
+
+-- Add rounded corners
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 12)
+corner.Parent = mainFrame
+
+-- Top Bar
+local topBar = Instance.new("Frame")
+topBar.Name = "TopBar"
+topBar.Size = UDim2.new(1, 0, 0, 40)
+topBar.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+topBar.BorderSizePixel = 0
+topBar.Parent = mainFrame
+
+local topCorner = Instance.new("UICorner")
+topCorner.CornerRadius = UDim.new(0, 12)
+topCorner.Parent = topBar
+
+-- Fix bottom of top bar
+local topBarFix = Instance.new("Frame")
+topBarFix.Size = UDim2.new(1, 0, 0, 12)
+topBarFix.Position = UDim2.new(0, 0, 1, -12)
+topBarFix.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+topBarFix.BorderSizePixel = 0
+topBarFix.Parent = topBar
+
+-- Title
+local title = Instance.new("TextLabel")
+title.Name = "Title"
+title.Size = UDim2.new(1, -80, 1, 0)
+title.Position = UDim2.new(0, 10, 0, 0)
+title.BackgroundTransparency = 1
+title.Font = Enum.Font.GothamBold
+title.Text = "💔 V2 DISCONTINUED"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 18
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.Parent = topBar
+
+-- Minimize Button
+local minimizeButton = Instance.new("TextButton")
+minimizeButton.Name = "MinimizeButton"
+minimizeButton.Size = UDim2.new(0, 30, 0, 30)
+minimizeButton.Position = UDim2.new(1, -70, 0, 5)
+minimizeButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+minimizeButton.BorderSizePixel = 0
+minimizeButton.Font = Enum.Font.GothamBold
+minimizeButton.Text = "−"
+minimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+minimizeButton.TextSize = 20
+minimizeButton.Parent = topBar
+
+local minimizeCorner = Instance.new("UICorner")
+minimizeCorner.CornerRadius = UDim.new(0, 6)
+minimizeCorner.Parent = minimizeButton
+
+-- Close Button
+local closeButton = Instance.new("TextButton")
+closeButton.Name = "CloseButton"
+closeButton.Size = UDim2.new(0, 30, 0, 30)
+closeButton.Position = UDim2.new(1, -35, 0, 5)
+closeButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+closeButton.BorderSizePixel = 0
+closeButton.Font = Enum.Font.GothamBold
+closeButton.Text = "×"
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.TextSize = 24
+closeButton.Parent = topBar
+
+local closeCorner = Instance.new("UICorner")
+closeCorner.CornerRadius = UDim.new(0, 6)
+closeCorner.Parent = closeButton
+
+-- Content Frame
+local contentFrame = Instance.new("Frame")
+contentFrame.Name = "Content"
+contentFrame.Size = UDim2.new(1, -40, 1, -80)
+contentFrame.Position = UDim2.new(0, 20, 0, 50)
+contentFrame.BackgroundTransparency = 1
+contentFrame.Parent = mainFrame
+
+-- Message
+local message = Instance.new("TextLabel")
+message.Name = "Message"
+message.Size = UDim2.new(1, 0, 0, 130)
+message.BackgroundTransparency = 1
+message.Font = Enum.Font.Gotham
+message.Text = "Syntrix V2 has been discontinued.\n\nNo more updates. No new features. No bug fixes.\n\nThe script still works for now, but support has ended.\n\nThank you for using Syntrix V2. 💔"
+message.TextColor3 = Color3.fromRGB(220, 220, 220)
+message.TextSize = 14
+message.TextWrapped = true
+message.TextYAlignment = Enum.TextYAlignment.Top
+message.Parent = contentFrame
+
+-- Button Container
+local buttonContainer = Instance.new("Frame")
+buttonContainer.Name = "ButtonContainer"
+buttonContainer.Size = UDim2.new(1, 0, 0, 45)
+buttonContainer.Position = UDim2.new(0, 0, 1, -50)
+buttonContainer.BackgroundTransparency = 1
+buttonContainer.Parent = contentFrame
+
+-- Why Button (Left side)
+local whyButton = Instance.new("TextButton")
+whyButton.Name = "WhyButton"
+whyButton.Size = UDim2.new(0.48, 0, 1, 0)
+whyButton.Position = UDim2.new(0, 0, 0, 0)
+whyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+whyButton.BorderSizePixel = 0
+whyButton.Font = Enum.Font.GothamBold
+whyButton.Text = "Why?"
+whyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+whyButton.TextSize = 16
+whyButton.AutoButtonColor = false
+whyButton.Parent = buttonContainer
+
+local whyCorner = Instance.new("UICorner")
+whyCorner.CornerRadius = UDim.new(0, 8)
+whyCorner.Parent = whyButton
+
+-- Continue Button (Right side)
+local continueButton = Instance.new("TextButton")
+continueButton.Name = "ContinueButton"
+continueButton.Size = UDim2.new(0.48, 0, 1, 0)
+continueButton.Position = UDim2.new(0.52, 0, 0, 0)
+continueButton.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+continueButton.BorderSizePixel = 0
+continueButton.Font = Enum.Font.GothamBold
+continueButton.Text = "Continue Anyway"
+continueButton.TextColor3 = Color3.fromRGB(20, 20, 20)
+continueButton.TextSize = 16
+continueButton.AutoButtonColor = false
+continueButton.Parent = buttonContainer
+
+local continueCorner = Instance.new("UICorner")
+continueCorner.CornerRadius = UDim.new(0, 8)
+continueCorner.Parent = continueButton
+
+-- Why Button hover effect
+whyButton.MouseEnter:Connect(function()
+    whyButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+end)
+
+whyButton.MouseLeave:Connect(function()
+    whyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+end)
+
+whyButton.MouseButton1Down:Connect(function()
+    whyButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+end)
+
+whyButton.MouseButton1Up:Connect(function()
+    whyButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+end)
+
+-- Continue Button hover effect
+continueButton.MouseEnter:Connect(function()
+    continueButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+end)
+
+continueButton.MouseLeave:Connect(function()
+    continueButton.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+end)
+
+continueButton.MouseButton1Down:Connect(function()
+    continueButton.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+end)
+
+continueButton.MouseButton1Up:Connect(function()
+    continueButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+end)
+
+-- Why GUI
+local function createWhyGUI()
+    local whyGui = Instance.new("ScreenGui")
+    whyGui.Name = "WhyDiscontinuedGUI"
+    whyGui.ResetOnSpawn = false
+    whyGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+    local whyFrame = Instance.new("Frame")
+    whyFrame.Name = "WhyFrame"
+    whyFrame.Size = UDim2.new(0, 450, 0, 400)
+    whyFrame.Position = UDim2.new(0.5, -225, 0.5, -200)
+    whyFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    whyFrame.BorderSizePixel = 0
+    whyFrame.Parent = whyGui
+    
+    local whyCorner = Instance.new("UICorner")
+    whyCorner.CornerRadius = UDim.new(0, 12)
+    whyCorner.Parent = whyFrame
+    
+    -- Top Bar
+    local whyTopBar = Instance.new("Frame")
+    whyTopBar.Name = "TopBar"
+    whyTopBar.Size = UDim2.new(1, 0, 0, 40)
+    whyTopBar.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    whyTopBar.BorderSizePixel = 0
+    whyTopBar.Parent = whyFrame
+    
+    local whyTopCorner = Instance.new("UICorner")
+    whyTopCorner.CornerRadius = UDim.new(0, 12)
+    whyTopCorner.Parent = whyTopBar
+    
+    local whyTopBarFix = Instance.new("Frame")
+    whyTopBarFix.Size = UDim2.new(1, 0, 0, 12)
+    whyTopBarFix.Position = UDim2.new(0, 0, 1, -12)
+    whyTopBarFix.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    whyTopBarFix.BorderSizePixel = 0
+    whyTopBarFix.Parent = whyTopBar
+    
+    local whyTitle = Instance.new("TextLabel")
+    whyTitle.Name = "Title"
+    whyTitle.Size = UDim2.new(1, -50, 1, 0)
+    whyTitle.Position = UDim2.new(0, 10, 0, 0)
+    whyTitle.BackgroundTransparency = 1
+    whyTitle.Font = Enum.Font.GothamBold
+    whyTitle.Text = "❓ Why Was V2 Discontinued?"
+    whyTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+    whyTitle.TextSize = 18
+    whyTitle.TextXAlignment = Enum.TextXAlignment.Left
+    whyTitle.Parent = whyTopBar
+    
+    local whyCloseButton = Instance.new("TextButton")
+    whyCloseButton.Name = "CloseButton"
+    whyCloseButton.Size = UDim2.new(0, 30, 0, 30)
+    whyCloseButton.Position = UDim2.new(1, -35, 0, 5)
+    whyCloseButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    whyCloseButton.BorderSizePixel = 0
+    whyCloseButton.Font = Enum.Font.GothamBold
+    whyCloseButton.Text = "×"
+    whyCloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    whyCloseButton.TextSize = 24
+    whyCloseButton.Parent = whyTopBar
+    
+    local whyCloseCorner = Instance.new("UICorner")
+    whyCloseCorner.CornerRadius = UDim.new(0, 6)
+    whyCloseCorner.Parent = whyCloseButton
+    
+    -- Scrolling Frame for content
+    local scrollFrame = Instance.new("ScrollingFrame")
+    scrollFrame.Name = "ScrollFrame"
+    scrollFrame.Size = UDim2.new(1, -40, 1, -100)
+    scrollFrame.Position = UDim2.new(0, 20, 0, 50)
+    scrollFrame.BackgroundTransparency = 1
+    scrollFrame.BorderSizePixel = 0
+    scrollFrame.ScrollBarThickness = 6
+    scrollFrame.ScrollBarImageColor3 = Color3.fromRGB(100, 100, 100)
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 600)
+    scrollFrame.Parent = whyFrame
+    
+    local whyMessage = Instance.new("TextLabel")
+    whyMessage.Name = "Message"
+    whyMessage.Size = UDim2.new(1, -10, 0, 580)
+    whyMessage.BackgroundTransparency = 1
+    whyMessage.Font = Enum.Font.Gotham
+    whyMessage.Text = [[I've decided to discontinue Syntrix V2 for several reasons:
+
+🔧 Technical Reasons:
+• The codebase became too complex to maintain
+• Roblox updates kept breaking features
+• Too many edge cases and game-specific issues
+• Performance optimization became difficult
+
+⏰ Time & Resources:
+• Development was taking too much time
+• Support requests were overwhelming
+• Bug reports were never-ending
+• Couldn't keep up with constant fixes
+
+📊 Community Feedback:
+• Most users wanted features I couldn't deliver
+• Too many conflicting feature requests
+• Support became unsustainable
+• Better alternatives exist now
+
+💡 Moving Forward:
+V2 was a learning experience. It taught me a lot about scripting, community management, and project scope.
+
+The script still works and is stable. You can continue using it, but there won't be any updates, new features, or bug fixes.
+
+Thank you for your understanding and support. 💜
+
+- Syntrix Team]]
+    whyMessage.TextColor3 = Color3.fromRGB(220, 220, 220)
+    whyMessage.TextSize = 14
+    whyMessage.TextWrapped = true
+    whyMessage.TextYAlignment = Enum.TextYAlignment.Top
+    whyMessage.TextXAlignment = Enum.TextXAlignment.Left
+    whyMessage.Parent = scrollFrame
+    
+    -- Close button functionality
+    whyCloseButton.MouseButton1Click:Connect(function()
+        whyGui:Destroy()
+    end)
+    
+    -- Make draggable
+    local whyDragging
+    local whyDragInput
+    local whyDragStart
+    local whyStartPos
+    
+    local function whyUpdate(input)
+        local delta = input.Position - whyDragStart
+        whyFrame.Position = UDim2.new(
+            whyStartPos.X.Scale,
+            whyStartPos.X.Offset + delta.X,
+            whyStartPos.Y.Scale,
+            whyStartPos.Y.Offset + delta.Y
+        )
+    end
+    
+    whyTopBar.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            whyDragging = true
+            whyDragStart = input.Position
+            whyStartPos = whyFrame.Position
+            
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    whyDragging = false
+                end
+            end)
+        end
+    end)
+    
+    whyTopBar.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement then
+            whyDragInput = input
+        end
+    end)
+    
+    game:GetService("UserInputService").InputChanged:Connect(function(input)
+        if input == whyDragInput and whyDragging then
+            whyUpdate(input)
+        end
+    end)
+    
+    -- Parent to CoreGui or PlayerGui
+    local success = pcall(function()
+        whyGui.Parent = game:GetService("CoreGui")
+    end)
+    
+    if not success then
+        whyGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+    end
+end
+
+-- Why Button Functionality
+whyButton.MouseButton1Click:Connect(function()
+    createWhyGUI()
+end)
+
+-- Continue Button Functionality
+continueButton.MouseButton1Click:Connect(function()
+    continueButton.Text = "Loading V2..."
+    continueButton.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+    task.wait(0.5)
+    screenGui:Destroy()
+    
+    -- Load the main V2 script
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SYNTRIX-AIMBOT/Syntrix-Aimbot-V2.0/refs/heads/main/v2"))()
+end)
+
+-- Close Button Functionality
+closeButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+end)
+
+-- Minimize functionality
+local isMinimized = false
+minimizeButton.MouseButton1Click:Connect(function()
+    isMinimized = not isMinimized
+    
+    if isMinimized then
+        contentFrame.Visible = false
+        mainFrame:TweenSize(UDim2.new(0, 400, 0, 40), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true)
+        minimizeButton.Text = "+"
+    else
+        mainFrame:TweenSize(UDim2.new(0, 400, 0, 280), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true, function()
+            contentFrame.Visible = true
+        end)
+        minimizeButton.Text = "−"
+    end
+end)
+
+-- Make main frame draggable
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local function update(input)
+    local delta = input.Position - dragStart
+    mainFrame.Position = UDim2.new(
+        startPos.X.Scale,
+        startPos.X.Offset + delta.X,
+        startPos.Y.Scale,
+        startPos.Y.Offset + delta.Y
+    )
+end
+
+topBar.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = mainFrame.Position
+        
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+topBar.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
+        dragInput = input
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        update(input)
+    end
+end)
+
+-- Parent to CoreGui or PlayerGui
+local success = pcall(function()
+    screenGui.Parent = game:GetService("CoreGui")
+end)
+
+if not success then
+    screenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+end
