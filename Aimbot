@@ -271,34 +271,17 @@ local function createWhyGUI()
     whyMessage.Size = UDim2.new(1, -10, 0, 580)
     whyMessage.BackgroundTransparency = 1
     whyMessage.Font = Enum.Font.Gotham
-    whyMessage.Text = [[I've decided to discontinue Syntrix V2 for several reasons:
+    whyMessage.Text = [[After a lot of thought, I’ve decided to officially discontinue Syntrix V2.
 
-🔧 Technical Reasons:
-• The codebase became too complex to maintain
-• Roblox updates kept breaking features
-• Too many edge cases and game-specific issues
-• Performance optimization became difficult
+Over time, I realized the project no longer met the standard I want my work to reflect. While it functions and remains usable, I don’t feel motivated to continue building on it.
 
-⏰ Time & Resources:
-• Development was taking too much time
-• Support requests were overwhelming
-• Bug reports were never-ending
-• Couldn't keep up with constant fixes
+V2 was a valuable learning experience. It helped me grow in scripting, system design, and managing a community. I’m grateful to everyone who used it, gave feedback, and supported the project.
 
-📊 Community Feedback:
-• Most users wanted features I couldn't deliver
-• Too many conflicting feature requests
-• Support became unsustainable
-• Better alternatives exist now
+The script will remain available in its current state, but there will be no future updates, features, or fixes.
 
-💡 Moving Forward:
-V2 was a learning experience. It taught me a lot about scripting, community management, and project scope.
+Thank you for being part of it.
 
-The script still works and is stable. You can continue using it, but there won't be any updates, new features, or bug fixes.
-
-Thank you for your understanding and support. 💜
-
-- Syntrix Team]]
+— Synx]]
     whyMessage.TextColor3 = Color3.fromRGB(220, 220, 220)
     whyMessage.TextSize = 14
     whyMessage.TextWrapped = true
